@@ -9,9 +9,10 @@ var isPalindrome = function (x) {
     return false;
   }
   let reversed = 0;
+  let current = x;
   while (current !== 0) {
-    reversed = (reversed * 10 * current) % 10;
-    current = math.floor(current / 10);
+    reversed = reversed * 10 + (current % 10);
+    current = Math.floor(current / 10);
   }
   return x === reversed;
 };
